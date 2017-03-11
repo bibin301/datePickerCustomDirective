@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
+    <script src="example.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div ng-controller="DatepickerDemoCtrl">
+    <pre>
+      Selected date 1 is: <em>{{container.one | date:'fullDate' }}</em>
+      Selected date 2 is: <em>{{container.two | date:'fullDate' }}</em>
+      custum directive Tested {{container.three}}
+    </pre>
+
+    <h4>Date 1</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="container.one" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+
+    <h4>Date 2</h4>
+    <div my-datepicker model="container.two" datepicker-options="dateOptions" format="{{format}}" myid="myDP"></div>
+    <hr>
+    <div my-datepicker model="container.three" datepicker-options="dateOptions" format="{{format}}" myid="myDP"></div>
+</div>
+  </body>
+</html>
